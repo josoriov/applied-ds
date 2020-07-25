@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 
-filepath = 'air_quality.csv'
+filepath = '../data/Generated/air_quality.csv'
 
 # %%
 air_quality = pd.read_csv(filepath)
@@ -16,15 +16,15 @@ regions.drop(labels=['comb'], inplace=True, axis=1)
 regions.set_index(['region_id'], inplace=True)
 regions.sort_index(inplace=True)
 regions = regions.drop(11)
-regions.to_csv('regions.csv')
+regions.to_csv('../data/Generated/regions.csv')
 # %%
 concentration = (air_quality.groupby(['region_id', 'year', 'variable'])['concentration'].mean())
-concentration.to_csv('concentration.csv')
+concentration.to_csv('../data/Generated/concentration.csv')
 
 # %%
-conc_path = 'concentration.csv'
-gdp_path = '../data/PIB_2010_2016.csv'
-reg_path = 'regions.csv'
+conc_path = '../data/Generated/concentration.csv'
+gdp_path = '../data/Original/PIB_2010_2016.csv'
+reg_path = '../data/Generated/regions.csv'
 
 concentration = pd.read_csv(conc_path)
 regions = pd.read_csv(reg_path)
@@ -44,4 +44,4 @@ del(to_drop, col_names, conc_path, gdp_path, reg_path)
 # %%
 
 gdp = regions.merge(gdp, how='left', left_on=['region'], right_on=['region'])
-gdp.to_csv('gdp.csv', index=False)
+gdp.to_csv('../data/Generated/gdp.csv', index=False)

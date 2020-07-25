@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # %%
-conc_path = 'concentration.csv'
-gdp_path = 'gdp.csv'
-reg_path = 'regions.csv'
+conc_path = '../data/Generated/concentration.csv'
+gdp_path = '../data/Generated/gdp.csv'
+reg_path = '../data/Generated/regions.csv'
 
 concentration = pd.read_csv(conc_path)
 gdp = pd.read_csv(gdp_path)
