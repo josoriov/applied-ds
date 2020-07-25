@@ -15,7 +15,8 @@ regions['region_id'] = regions.apply(lambda row: int(float(row['comb'].split(sep
 regions.drop(labels=['comb'], inplace=True, axis=1)
 regions.set_index(['region_id'], inplace=True)
 regions.sort_index(inplace=True)
-
+regions = regions.drop(11)
+regions.to_csv('regions.csv')
 # %%
 concentration = (air_quality.groupby(['region_id', 'year', 'variable'])['concentration'].mean())
 concentration.to_csv('concentration.csv')

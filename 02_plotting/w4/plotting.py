@@ -14,3 +14,6 @@ gdp = pd.read_csv(gdp_path)
 regions = pd.read_csv(reg_path)
 
 del(conc_path, gdp_path, reg_path)
+
+# %%
+concentration = concentration.merge(regions, how='left', left_on=['region_id'], right_on=['region_id'])
