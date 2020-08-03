@@ -1,0 +1,10 @@
+1. Separate data into groups by similarity
+2. Easy to interpret. | Require less preprocessing
+3. To improve generalization
+4. KNN | SVM | Neural Networks
+5. Naive Bayes over Decision Tree | Linear Regression over Decision Tree regressor
+6. Neural Network - KNN - Decision Tree
+7. 0.06745
+8. agency_name | compliance (bad)
+9. Time factor | Remove variables not in production | Sanity check
+10. 0 1 1 0

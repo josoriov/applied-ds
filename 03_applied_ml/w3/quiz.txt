@@ -1,0 +1,55 @@
+1. 0.99
+2. 0.905
+3. 0.923
+4. 0.960
+5.
+	from sklearn.metrics import precision_recall_curve
+
+	y_pred = m.predict(X_test)
+	precision, recall, thresholds = precision_recall_curve(y_test, y_pred)
+
+	plt.plot(recall, precision)
+	plt.show()
+
+	0.6
+
+6. Model 1 - ROC 1 | Model 2 - ROC 3 | Model 3- ROC 2
+7. Not enough information
+8.
+	from sklearn.metrics import precision_score
+
+	y_pred = m.predict(X_test)
+	score = precision_score(y_test, y_pred, average='micro')
+	score
+
+	0.744
+
+9. 
+10. Precision
+11. F1
+12. Misclassifying frequent labels
+13.
+	from sklearn.model_selection import GridSearchCV
+	from sklearn.metrics import precision_score
+
+	grid_values = {'gamma': [0.01, 0.1, 1, 10], 'C': [0.01, 0.1, 1, 10]}
+
+	grid_clf_acc = GridSearchCV(m, param_grid = grid_values, scoring='recall')
+	grid_clf_acc.fit(X_train, y_train)
+	m_best = grid_clf_acc.best_estimator_
+
+	y_pred = m_best.predict(X_test)
+	grid_clf_acc.best_score_ - precision_score(y_test, y_pred)
+
+14.
+	from sklearn.model_selection import GridSearchCV
+	from sklearn.metrics import recall_score
+
+	grid_values = {'gamma': [0.01, 0.1, 1, 10], 'C': [0.01, 0.1, 1, 10]}
+
+	grid_clf_acc = GridSearchCV(m, param_grid = grid_values, scoring='precision')
+	grid_clf_acc.fit(X_train, y_train)
+	m_best = grid_clf_acc.best_estimator_
+
+	y_pred = m_best.predict(X_test)
+	grid_clf_acc.best_score_ - recall_score(y_test, y_pred)

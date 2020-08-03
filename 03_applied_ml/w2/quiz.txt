@@ -1,0 +1,16 @@
+1. Overfitting - Higher alpha (Good)
+2. Decrease C, increase Gamma (Error)
+	Decrease C and Gamma (Good)
+3. Classify a set of fruits (Good)
+4. 10 (Good)
+5. LASSO (Good)
+6. 0.1 1 10 (Good)
+7. Ridge - LASSO (Good)
+8. 5 (Error)
+	3 (Good)
+9. 10 (Good)
+
+10. 0 (Error)
+	10 (Good)
+11. Prevents leaking 
+	Increases complexity(Good)
